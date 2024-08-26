@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* ANIMATION */
+  .sl-animated-md {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .sl-animated-lg {
+    @apply transition-all duration-500 ease-in-out;
+  }
+
+  .sl-animated-xl {
+    @apply transition-all duration-700 ease-in-out;
+  }
+}
+.hidden_searchbd {
+  display: none;
+}
+@layer base {
+  body {
+    @apply text-xs text-sky;
+  }
+  a,
+  button {
+    @apply inline-block cursor-pointer;
+  }
+
+  input,
+  select,
+  textarea {
+    @apply w-full outline-none bg-transparent;
+  }
+  thead tr {
+    @apply border-b border-sky text-left uppercase;
+  }
+  tbody tr {
+    @apply border-b border-sky/30 text-left;
+  }
+  th {
+    @apply font-semibold tracking-wide pb-4 px-2 first:pl-4 last:pr-4;
+  }
+  td {
+    @apply py-4 px-2 first:pl-4 last:pr-4;
+  }
+}
+
+@layer utilities {
+  .sl-bg-full {
+    background-size: 100% 100%;
+  }
+  .sl-shadow-fade {
+    box-shadow: 0px 10px 20px rgba(108, 39, 255, 0.3);
+  }
+  .sl-scroll-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    position: relative;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+  }
+  input[type="radio"]:before,
+  input[type="checkbox"]:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    inset: 0;
+    border: 2px solid #828bb2;
+    border-radius: 3px;
+    background-color: #ffffff;
+  }
+  input[type="radio"]:checked:after,
+  input[type="checkbox"]:checked:after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: solid #828bb2;
+    border-width: 0 2px 2px 0;
+    position: absolute;
+    top: 2px;
+    left: 5.5px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
